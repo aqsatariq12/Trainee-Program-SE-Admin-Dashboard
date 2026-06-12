@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[rgb(80,22,18)] to-[rgb(28,22,41)]"
+  >
+    <div
+      class="bg-white shadow-lg rounded-xl w-full max-w-5xl flex items-center"
+    >
+      <div class="w-1/2">
+        <img
+          src="assets/signup page.png"
+          alt=""
+          class="w-full h-full object-cover rounded-4xl p-2"
+        />
+      </div>
+      <form class="w-1/2 p-8" id="loginFormContainer">
+        <!-- <form action=""> -->
+        <h1 class="text-3xl font-bold mb-6 text-center text-[rgb(80,22,18)]">
+          Login
+        </h1>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter Email"
+          class="w-full border-2 border-[rgb(80,22,18)] p-3 rounded-md mb-4"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter Password"
+          class="w-full border-2 border-[rgb(80,22,18)] p-3 rounded-md mb-4"
+        />
+        <button
+          id="loginBtn"
+          type="submit"
+          class="w-full bg-gradient-to-r from-[rgb(80,22,18)] to-[rgb(28,22,41)] text-white p-3 rounded-md"
+        >
+          Login
+        </button>
+        <!-- </form> -->
+        <div class="text-center pt-5">
+          <small class="text-center"
+            >Don't have an account?
+            <a href="signup.html" class="text-blue-700 font-bold"
+              >signup</a
+            ></small
+          >
+        </div>
+      </form>
+    </div>
+    <script src="login.js"></script>
+    <!-- <script>
+      const loginFormContainer = document.getElementById("loginFormContainer");
+
+      loginFormContainer.addEventListener("submit", (e) => {
+        e.preventDefault();
+        Login(e);
+        console.log(loginFormContainer);
+      });
+
+      function Login(e) {
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log("This is the Submitted Data", data);
+      }
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <div
+        class="w-64 bg-gradient-to-r from-[rgb(80,22,18)] to-[rgb(28,22,41)] shadow-[0_0_15px_rgba(80,22,18,0.6)] z-50 text-white p-6 text-center"
+      >
+        <h2 class="text-xl font-bold mb-8">Admin Panel</h2>
+        <ul class="space-y-6">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Admin</a></li>
+        </ul>
+      </div>
+
+      <div class="flex-1">
+        <div
+          class="flex justify-between items-center px-6 py-4 bg-white shadow-[0_0_15px_rgba(80,22,18,0.6)] relative"
+        >
+          <div>
+            <h1 class="text-2xl font-bold text-[rgb(80,22,18)]">Dashboard</h1>
+            <p class="text-sm text-gray-500">Welcome back, Admin</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <div
+              id="profileBtn"
+              class="w-11 h-11 rounded-full bg-gradient-to-r from-[rgb(80,22,18)] to-[rgb(28,22,41)] text-white font-semibold flex items-center justify-center cursor-pointer shadow-md hover:scale-105 transition"
+            ></div>
+
+            <div
+              id="dropdown"
+              class="hidden absolute top-16 right-6 w-52 bg-white rounded-xl shadow-lg border z-50"
+            >
+              <div class="p-4 border-b">
+                <p class="text-gray-500 text-sm">Logged in as</p>
+                <p id="userName" class="font-semibold text-gray-800"></p>
+              </div>
+
+              <button
+                id="logoutBtn"
+                class="w-full text-left px-4 py-3 text-red-500 hover:bg-red-50 rounded-b-xl cursor-pointer"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pt-5 ml-7">
+          <h1 class="text-2xl font-bold mb-6 text-[rgb(80,22,18)]">Users</h1>
+        </div>
+        <div class="p-6 flex justify-center">
+          <div
+            class="w-full max-w-[1200px] max-h-[500px] overflow-x-auto overflow-y-auto bg-white shadow-md rounded-lg border"
+          >
+            <table class="min-w-max border-collapse">
+              <thead
+                class="bg-gradient-to-r from-[rgb(80,22,18)] to-[rgb(28,22,41)] text-white sticky top-0 z-10"
+              >
+                <tr></tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

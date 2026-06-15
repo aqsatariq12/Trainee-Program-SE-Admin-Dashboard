@@ -1,6 +1,6 @@
 const isLogin = localStorage.getItem("isLogin");
 if (isLogin !== "true") {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -21,7 +21,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener("click", () => {
   localStorage.setItem("isLogin", false);
   localStorage.removeItem("currentUser");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 async function getUsers() {

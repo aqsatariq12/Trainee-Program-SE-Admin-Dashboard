@@ -29,7 +29,7 @@ async function getUsers() {
     const response = await fetch("https://dummyjson.com/users");
     const data = await response.json();
     // console.log(data.users);
-    
+
     return data.users;
   } catch (error) {
     console.log(error);
@@ -40,8 +40,10 @@ async function getUsers() {
 
 function renderUsers(users) {
   const tableBody = document.getElementById("tableBody");
-//   console.log("key is :  ", Object.keys(users[0]));
-const keys = Object.keys(users[0]);
+  //   console.log("key is :  ", Object.keys(users[0]));
+  const keys = Object.keys(users[0]).filter(
+    (key) => typeof users[0][key] != "object",
+  );
   const thead = document.querySelector("thead tr");
 
   keys.forEach((key) => {
@@ -58,10 +60,18 @@ const keys = Object.keys(users[0]);
       "border-b hover:text-[rgb(80,22,18)] hover:cursor-pointer transition";
 
     keys.forEach((key) => {
-        const td = document.createElement("td");
-        td.className = "p-3 border-b whitespace-nowrap";
-        td.textContent = user[key];
-        tr.appendChild(td);
+      const td = document.createElement("td");
+      td.className = "p-3 border-b whitespace-nowrap";
+
+      let value = user[key];
+
+      if (typeof value === "string") {
+        td.textContent = value.length > 20 ? value.slice(0, 20) + "..." : value;
+      } else {
+        td.textContent = value;
+      }
+
+      tr.appendChild(td);
     });
 
     tableBody.appendChild(tr);
